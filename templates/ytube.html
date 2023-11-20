@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body 
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 500px;
+            background-color: wheat;
+        }
+        .box 
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        input[type="text"]
+        {
+            border-radius: 10px;
+            padding: 10px;
+            outline: none;
+            font-size: 20px;
+            text-align: center;
+        }
+        input[type="submit"]
+        {
+            
+            border-radius: 10px;
+            padding: 10px;
+            outline: none;
+            font-size: 20px;
+            text-align: center;
+            background-color: aqua;
+            cursor: pointer;
+        }
+        video 
+        {
+            border: 1px solid black;
+            margin-top: 20px;
+            border: none;
+        }
+        .vid 
+        {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        a 
+        {
+            margin-top: 20px;
+            
+        }
+        button
+        {
+            
+            border-radius: 10px;
+            padding: 10px;
+            outline: none;
+            font-size: 20px;
+            text-align: center;
+            background-color: aqua;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <form method="post" action="user">
+            <input type="text" placeholder="Enter video link..." name="video_link">
+            <input type="submit" value="Search">
+        </form>
+        <div class="vid">
+            <video controls tabindex="-1" controlslist="nodownload" src="{{url_for('server')}}" height="200" width="200">
+                <track kind="captions" srclang="en" src="{{url_for('static',filename='song.vtt')}}" label="English">
+            </video>
+            <a href="{{url_for('down')}}"><button>Download</button></a>
+        </div>
+    </div>
+</body>
+</html>
